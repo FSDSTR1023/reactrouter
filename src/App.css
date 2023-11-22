@@ -1,0 +1,14 @@
+body {
+  font-family: sans-serif;
+}
+
+nav ul {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+nav li {
+  list-style: none;
+  padding:10px 30px;
+}
