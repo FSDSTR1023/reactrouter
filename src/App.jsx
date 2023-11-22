@@ -6,6 +6,7 @@ import ProjectList from './components/projectlist';
 import Home from './components/home';
 import About from './components/about';
 import NotFound from './components/notfound';
+import ProjectDetail from './components/projectdetail';
 
 function App() {
 
@@ -22,7 +23,9 @@ function App() {
         <main className="main">
             <Routes>
               <Route path="/" element={<Home />}></Route>
-              <Route path="/projects" element={<ProjectList />}></Route>
+              <Route path="/projects" element={<ProjectList />}>
+                <Route path="project/:projectId" element={<ProjectDetail />}></Route>
+              </Route>
               <Route path="/about" element={<About />}></Route>
               <Route path="*" element={<NotFound />}></Route>
             </Routes>
