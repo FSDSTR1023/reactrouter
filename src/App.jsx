@@ -1,33 +1,36 @@
-import { useState } from 'react'
-import './App.css'
-
+import Home from "./components/Home";
+import About from "./components/About";
+import ProjectList from "./components/ProjectList";
+import NotFound from "./components/NotFound";
+import ProjectDetail from "./components/ProjectDetail";
 import {BrowserRouter, Link, Routes, Route} from "react-router-dom";
-import ProjectList from './components/projectlist';
-import Home from './components/home';
-import About from './components/about';
-import NotFound from './components/notfound';
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
-        <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/projects">Projects</Link></li>
-            <li><Link to="/about">About</Link></li>
-          </ul>
-        </nav>
+        <header>
+          <h1>React Router</h1>
+          <nav>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/projects">Projects</Link></li>
+              <li><Link to="/about">About</Link></li>
+            </ul>
+          </nav>
+        </header>
         <main>
-            <Routes>
-              <Route path="/" element={<Home />}></Route>
-              <Route path="/projects" element={<ProjectList />}></Route>
-              <Route path="/about" element={<About />}></Route>
-              <Route path="*" element={<NotFound />}></Route>
-            </Routes>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/projects" element={<ProjectList />}>
+              <Route path="projects/:projectId" element={<ProjectDetail />}></Route>
+            </Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
+          </Routes>
         </main>
-      </BrowserRouter>
+      </BrowserRouter>      
     </>
   )
 }
