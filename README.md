@@ -35,3 +35,44 @@ La parte que queremos que cambie, utilizaremos el módulo Routes. En nuestro cas
 El tag `<Routes>` nos delimitará la definición de las distintas rutas.
 
 El tag `<Route>` es el que va a decidir qué elemento mostrar según el path
+
+## Subroutes
+
+Si queremos incluir subfragmentos que deben cambiar según la ruta, podemos utilizar el componente `<Outlet />`
+
+Entonces en la definición de las rutas deberemos especificar las subrutas:
+
+```
+<Route path="/projects" element={<ProjectList />}>
+    <Route path="project/:projectId" element={<ProjectDetail />}></Route>
+</Route>
+```
+
+## Params y Search params
+
+Para obtener los parámetros de la ruta, react router nos facilita dos hooks: `useParams` y `useSearchParams`
+
+`useParams` lo utilizaremos para obtener los parámetros dentro de la ruta, por ejemplo `project/:projectId`
+
+```
+let params = useParams();
+```
+
+Para obtener los parámetros, debemos usarlo como un objeto:
+
+```
+params.projectId
+```
+
+`useSearchParams` lo utilizaremos para obtener los parámetros que van después del interrogante, por ejemplo `projects/?paramA=1&paramB=2`
+
+```
+let [searchParams, setSearchParams] = useSearchParams();
+```
+
+funciona como un useState y para obtener los parámetros solamente debemos indicar la siguiente síntaxis:
+
+```
+searchParams.get("paramA")
+```
+
