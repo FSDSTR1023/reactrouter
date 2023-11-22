@@ -19,7 +19,7 @@ function App() {
             <li><Link to="/about">About</Link></li>
           </ul>
         </nav>
-        <main className="main">
+        <main>
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="/projects" element={<ProjectList />}></Route>
