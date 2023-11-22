@@ -3,9 +3,9 @@
 Con este ejemplo vamos a ver cómo utilizar las URLS para navegar por nuestro contenido.
 
 La idea es tener una aplicación con tres páginas que se accederán con los siguientes paths:
-- Home: <code>/</code>
-- Projects: <code>/projects</code>
-- About: <code>/about</code>
+- Home: `/`
+- Projects: `/projects`
+- About: `/about`
 
 Para ello utilizaremos el módulo [react router](https://reactrouter.com/en/main)
 
