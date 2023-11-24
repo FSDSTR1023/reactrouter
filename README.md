@@ -15,6 +15,14 @@ Entonces, en nuestra aplicación importaremos los siguientes componentes:
 
 `import {BrowserRouter, Link, Routes, Route} from "react-router-dom";`
 
+Primero englobaremos toda la parte de navegación mediante la etiqueta `<BrowserRouter>` quedando la siguente estructura:
+
+```
+<BrowserRouter>
+    ...nuestro código...
+</BrowserRouter>
+```
+
 Los enlaces los haremos mediante la siguiente síntaxis:
 
 `<Link to="/projects">Projects</Link>`
